@@ -9,5 +9,7 @@ INSTALL.txt:  RDDLSim installation and execution instructions
 
 PROTOCOL.txt: RDDLSim client/server protocol
 
-PPUDD -- Nicolas Drougard (nicolas.drougard@onera.fr)
-=====================================================
+PPUDD -- planning algorithm.
+============================
+
+Nicolas Drougard (nicolas.drougard@onera.fr)
