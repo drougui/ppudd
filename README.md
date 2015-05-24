@@ -24,5 +24,4 @@ Nicolas Drougard (nicolas.drougard@onera.fr)
 	right click on the project -> "Build path" -> "Configure Build Path..." -> "Libraries" tab
 	-> "JRE System Library" -> "Access rules" -> "Add..."
 	and then 
-	Resolution: "Accessible"
-	Rule Pattern: "com/sun/org/**";
+	Resolution: "Accessible" -- Rule Pattern: "com/sun/org/**";
