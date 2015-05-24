@@ -13,3 +13,16 @@ PPUDD -- planning algorithm.
 ============================
 
 Nicolas Drougard (nicolas.drougard@onera.fr)
+
+- open this java project with eclipse;
+
+- build path configuration: 
+	right click on the project -> "Build path" -> "Configure Build Path..." -> "Libraries" tab
+	-> "Add External JARs" -> Select all .jar files of rddlsim/lib;
+
+- if needed (for some imports in solvers): 
+	right click on the project -> "Build path" -> "Configure Build Path..." -> "Libraries" tab
+	-> "JRE System Library" -> "Access rules" -> "Add..."
+	and then 
+	Resolution: "Accessible"
+	Rule Pattern: "com/sun/org/**";
