@@ -1,1 +1,0 @@
-prism poll2.sm -pf 'P>=0.5 [ true U<=5 (s=1 & a=0) ]'

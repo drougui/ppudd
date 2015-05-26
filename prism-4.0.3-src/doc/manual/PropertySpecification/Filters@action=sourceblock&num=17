@@ -1,2 +1,0 @@
-filter(state, P=? [ F "error" ], "init")
-filter(range, P=? [ F "error" ], "init")

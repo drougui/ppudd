@@ -1,1 +1,0 @@
-prism poll2.sm -exportstates poll2.sta -exporttrans poll2.tra -exportmatlab

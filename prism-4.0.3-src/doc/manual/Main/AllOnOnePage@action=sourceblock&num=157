@@ -1,2 +1,0 @@
-setenv PRISM_JAVAMAXMEM 512m
-prism big_model.pm

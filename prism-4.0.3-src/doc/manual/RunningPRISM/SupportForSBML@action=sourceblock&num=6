@@ -1,4 +1,0 @@
-const double T;
-const int c;
-
-R{c}=? [I=T]

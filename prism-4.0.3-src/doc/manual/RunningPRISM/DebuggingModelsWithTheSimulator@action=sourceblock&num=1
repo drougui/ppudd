@@ -1,3 +1,0 @@
-prism model.pm -simpath 10 path.txt
-prism model.pm -simpath time=7.5 path.txt
-prism model.pm -simpath deadlock path.txt

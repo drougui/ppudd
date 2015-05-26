@@ -1,1 +1,0 @@
-prism -importtrans poll2.tra -importstates poll2.sta -importlabels poll2.lab -ctmc

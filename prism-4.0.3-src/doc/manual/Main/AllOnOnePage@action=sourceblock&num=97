@@ -1,1 +1,0 @@
-filter(print, P=? [ ... ], x>2)

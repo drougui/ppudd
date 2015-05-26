@@ -1,2 +1,0 @@
-global g : [1..10];
-global b : bool init true;

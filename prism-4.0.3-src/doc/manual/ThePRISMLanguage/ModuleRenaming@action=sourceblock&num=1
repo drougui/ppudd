@@ -1,1 +1,0 @@
-module M2 = M1 [ x=y, y=x ] endmodule

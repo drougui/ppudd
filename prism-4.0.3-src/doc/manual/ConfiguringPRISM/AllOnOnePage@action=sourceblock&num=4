@@ -1,3 +1,0 @@
-PRISM_JAVAMAXMEM=512m
-export PRISM_JAVAMAXMEM
-prism big_model.pm

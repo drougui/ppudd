@@ -1,2 +1,0 @@
-make clean_all
-make ARCH=

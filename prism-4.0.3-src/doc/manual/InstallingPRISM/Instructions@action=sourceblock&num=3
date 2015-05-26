@@ -1,4 +1,0 @@
-gunzip prism-4.0-src.tar.gz
-tar xf prism-4.0-src.tar
-cd prism-4.0-src
-make

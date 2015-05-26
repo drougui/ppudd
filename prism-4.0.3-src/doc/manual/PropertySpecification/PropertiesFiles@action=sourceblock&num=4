@@ -1,1 +1,0 @@
-filter(forall, num_sensors>0 => "safe");

@@ -1,3 +1,0 @@
-P=? [ F X X X "a" ]
-P=? [ "a" U X X X "error" ]
-P=? [ ("a" U "b") U "c" "error" ]
