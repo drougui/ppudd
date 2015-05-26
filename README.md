@@ -5,13 +5,13 @@ Nicolas Drougard (nicolas.drougard@onera.fr)
 
 ## Synopsis
 
-This project provides the code of the PPUDD solver of \pi-POMDPs described in
-"Structured Possibilistic Planning Using Decision Diagrams", 
+This project provides the code of the solver of \pi-POMDPs PPUDD 
+described in "Structured Possibilistic Planning Using Decision Diagrams", 
 Nicolas Drougard, Florent Teichteil-Königsbuch, Jean-Loup Farges, Didier Dubois.
 
 It provides also the experiment proposed in
 "Qualitative Possibilistic Mixed-Observable MDPs" of the same authors,
-and the International Probabilistic Planning Competition (IPPC) 2014 simulations.
+and the simulations of the International Probabilistic Planning Competition (IPPC) 2014.
 
 This is presented in the context of the rddlsim project, 
 and using a library (for ADDs in C++) from the prism project.
@@ -31,7 +31,7 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/l
 
 ## Installation
 
-INSTALL rddlsim:
+#INSTALL rddlsim:
 - open this java project with eclipse;
 
 - build path configuration: 
@@ -44,7 +44,7 @@ INSTALL rddlsim:
 	- Resolution: "Accessible" 
 	- Rule Pattern: "com/sun/org/**".
 
-INSTALL the CUDD library from the prism project to use ADDs:
+#INSTALL the CUDD library from the prism project to use ADDs:
 ```
 cd rddlsim/prism-4.0.3-src
 nano Makefile
