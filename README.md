@@ -32,7 +32,7 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/l
 
 ## Installation
 
-### INSTALL rddlsim:
+### INSTALL RDDLSim:
 - open this java project with eclipse;
 
 - build path configuration: 
@@ -63,6 +63,25 @@ make
 
 and then run JDDTest.
 
+## RTGT ("reach the good target" benchmark)
+The file parameters.txt stores some parameters may be modified.
+
+- grid_size: size of a side of the grid;
+- walls_number: number of walls in the grid (random positions stated);
+- discount: discount factor of the resulting POMDP problem;
+- DM: 10, CM: 1: parameters of the observation function.
+
+```
+cd ReachTheGoodTarget
+make
+./generateRTGT
+```
+To translate the returned rddl file RTGT_pomdp.rddl
+into a spudd-sperseus one, use the following line:
+
+```
+java -Xmx3g -Djava.library.path=/home/drougard/workspace/prism-4.0.3-src/lib/ -cp '/home/drougard/RDDLSim/rddl-ppudd/bin:/home/drougard/RDDLSim/rddl-ppudd/lib/*' rddl.translate.RDDL2Format input output spudd_sperseus
+```
 ## Reference
 
 - RDDLSim -- A simulator for the relational dynamic influence diagram language (RDDL).
