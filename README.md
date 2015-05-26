@@ -46,12 +46,15 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/l
 	- Rule Pattern: "com/sun/org/**".
 
 ### INSTALL the CUDD library from the PRISM project (for ADDs):
+
 ```
 cd rddlsim/prism-4.0.3-src
 nano Makefile
 ```
+
 - set the java directory, for instance, for me : JAVA_DIR = /usr/lib/jvm/java-7-openjdk-amd64;
 - and then:
+
 ```
 make
 ```
@@ -69,19 +72,21 @@ The file parameters.txt stores some parameters which may be modified.
 - grid_size: size of a side of the grid;
 - walls_number: number of walls in the grid (random positions stated);
 - discount: discount factor of the resulting POMDP problem;
-- DM: 10, CM: 1: parameters of the observation function.
+- DM, CM: parameters of the observation function.
 
 ```
 cd ReachTheGoodTarget
 make
 ./generateRTGT
 ```
+
 To translate the returned rddl file RTGT_pomdp.rddl
 into a spudd-sperseus one, use the following line:
 
 ```
 java -Xmx3g -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/lib/*' rddl.translate.RDDL2Format input output spudd_sperseus
 ```
+
 ## Reference
 
 - RDDLSim -- A simulator for the relational dynamic influence diagram language (RDDL).
