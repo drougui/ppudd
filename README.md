@@ -50,13 +50,13 @@ INSTALL the CUDD library from the prism project to use ADDs:
 	cd rddlsim/prism-4.0.3-src
 	nano Makefile
 	```
-	set the java directory
-	// for instance, for me : JAVA_DIR = /usr/lib/jvm/java-7-openjdk-amd64
+	-set the java directory
+	for instance, for me : JAVA_DIR = /usr/lib/jvm/java-7-openjdk-amd64
 
-	and then 
-	```
-	make
-	```
+	-and then 
+```
+make
+```
 
 - In Eclipse:
 	go to the jdd directory in /src
@@ -64,16 +64,18 @@ INSTALL the CUDD library from the prism project to use ADDs:
 	- Name: LD_LIBRARY_PATH 
 	- Value: /path/to/the/directory/prism-4.0.3-src/lib/
 
-// and then run JDDTest.
+and then run JDDTest.
 
 ## Reference
 
 -RDDLSim -- A simulator for the relational dynamic influence diagram language (RDDL).
-	rddlsim: https://code.google.com/p/rddlsim/
-	Copyright (C) 2010, Scott Sanner (ssanner@gmail.com) and Sungwook Yoon (sungwook.yoon@gmail.com)
+https://code.google.com/p/rddlsim/
+Copyright (C) 2010, Scott Sanner (ssanner@gmail.com) and Sungwook Yoon (sungwook.yoon@gmail.com)
 
 -prism: http://www.prismmodelchecker.org/
+
 -CUDD: http://vlsi.colorado.edu/~fabio/CUDD/
+
 -IPPC2014: https://cs.uwaterloo.ca/~mgrzes/IPPC_2014/
 
 ## License
