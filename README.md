@@ -67,6 +67,8 @@ nano Makefile
 make
 ```
 
+(to remove all that is compiled: make clean_all)
+
 - In Eclipse: go to the jdd directory in /src;
 	right click on JDDTest.java -> Run as -> Run Configurations... -> Environment tab -> New... 
 	- Name: LD_LIBRARY_PATH 
