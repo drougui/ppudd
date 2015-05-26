@@ -77,7 +77,7 @@ The file parameters.txt stores some parameters which may be modified.
 - DM, CM: parameters of the observation function.
 
 ```
-cd cd /path/to/the/directory/rddlsim/ReachTheGoodTarget
+cd /path/to/the/directory/rddlsim/ReachTheGoodTarget
 make
 ./generateRTGT
 ```
