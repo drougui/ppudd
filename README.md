@@ -31,7 +31,7 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/l
 
 ## Installation
 
-#INSTALL rddlsim:
+### INSTALL rddlsim:
 - open this java project with eclipse;
 
 - build path configuration: 
@@ -44,7 +44,7 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/l
 	- Resolution: "Accessible" 
 	- Rule Pattern: "com/sun/org/**".
 
-#INSTALL the CUDD library from the prism project to use ADDs:
+### INSTALL the CUDD library from the prism project to use ADDs:
 ```
 cd rddlsim/prism-4.0.3-src
 nano Makefile
