@@ -14,7 +14,8 @@ It provides also the experiment proposed in
 and the simulations of the International Probabilistic Planning Competition (IPPC) 2014.
 
 This is presented in the context of the RDDLSim project, 
-and using a library (for ADDs in C++) from the prism project.
+and using the CUDD library (for the use of ADDs in C++) 
+from the prism project.
 
 ## Example
 
@@ -58,7 +59,7 @@ make
 - In Eclipse: go to the jdd directory in /src;
 	right click on JDDTest.java -> Run as -> Run Configurations... -> Environment tab -> New... 
 	- Name: LD_LIBRARY_PATH 
-	- Value: /path/to/the/directory/prism-4.0.3-src/lib/
+	- Value: /path/to/the/directory/rddlsim/prism-4.0.3-src/lib/
 
 and then run JDDTest.
 
