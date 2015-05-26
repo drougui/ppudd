@@ -1,0 +1,4 @@
+gunzip prism-4.0-linux.tar.gz
+tar xf prism-4.0-linux.tar
+cd prism-4.0-linux
+./install.sh
