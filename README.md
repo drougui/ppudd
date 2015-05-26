@@ -34,6 +34,12 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/l
 
 ## Installation
 
+### above all:
+where you want to save the project:
+```
+git clone https://github.com/drougui/rddlsim.git
+```
+
 ### INSTALL RDDLSim:
 - open this java project with eclipse;
 

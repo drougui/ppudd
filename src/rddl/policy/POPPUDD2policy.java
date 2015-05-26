@@ -22,7 +22,7 @@ import jdd.*;
 import rddl.*;
 import rddl.RDDL.*;
 import rddl.parser.parser;
-import rddl.ppudd.POPPUDDcuddLisp;
+import rddl.ppudd.POPPUDDCUDD;
 import rddl.translate.RDDL2Format;
 
 import rddl.sim.*;
@@ -49,7 +49,7 @@ public class POPPUDD2policy extends Policy {
 	public int compteur;
 	public boolean firstTrial;
 	
-	public POPPUDDcuddLisp leContexte;
+	public POPPUDDCUDD leContexte;
 	
 	public ArrayList<String> lesActions;
 	public String previousAction;
@@ -267,7 +267,7 @@ public ArrayList<PVAR_INST_DEF> getActions(State s) throws EvalException {
 			
 			try{
 				// WARNING!! NAME OF DIRECTORY WRITTEN HERE
-				leContexte = new POPPUDDcuddLisp("spudd_sperseus/" + instanceName + ".sperseus");
+				leContexte = new POPPUDDCUDD("spudd_sperseus/" + instanceName + ".sperseus");
 				leContexte.initPOPPUDD();
 				lesActions = leContexte._alActions;
 

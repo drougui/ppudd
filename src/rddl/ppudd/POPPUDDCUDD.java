@@ -13,7 +13,7 @@ import javax.jws.soap.InitParam;
 
 import com.sun.org.apache.bcel.internal.generic.LADD;
 
-public class POPPUDDcuddLisp extends DebugJDD { // in debug mode to see reference problems
+public class POPPUDDCUDD extends DebugJDD { // in debug mode to see reference problems
 
 	public ArrayList<String> _alActions; // for the strategy delta,
 										// the index of an action 
@@ -47,10 +47,10 @@ public class POPPUDDcuddLisp extends DebugJDD { // in debug mode to see referenc
 	
 	HashMap<String, JDDNode> action2rewardFunction = new HashMap<String, JDDNode>();
 
-	public POPPUDDcuddLisp() {
+	public POPPUDDCUDD() {
 	}
 
-	public POPPUDDcuddLisp(String instance_name) /*throws Exception*/ {
+	public POPPUDDCUDD(String instance_name) /*throws Exception*/ {
 		spudd_sperseus_file = instance_name;
 		long mem = 6000 * 1024;
 		double eps = 0.0000001;
