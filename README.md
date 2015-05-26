@@ -89,7 +89,7 @@ java -Xmx3g -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/lib/*
 
 Finally:
 - the input directory contains the generated .rddl file describing the POMDP problem;
-- the output directory contains the translated .spudd_sperseus file describing it with tree (lisp-like format).
+- the output directory contains the translated .spudd_sperseus file describing it with trees (lisp-like format).
 
 ## Reference
 
