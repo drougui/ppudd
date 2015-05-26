@@ -21,15 +21,15 @@ from the prism project.
 
 First terminal
 ```
-cd /path/to/the/directory/rddlsim
+cd /path/to/the/directory/ppudd
 ./run rddl.competition.Server ReachTheGoodTarget/input/
 ```
 
 Second terminal
 ```
-cd /path/to/the/directory/rddlsim
-export LD_LIBRARY_PATH=/path/to/the/directory/rddlsim/prism-4.0.3-src/lib/:$LD_LIBRARY_PATH
-java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/lib/ -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/rddlsim/lib/*' rddl.competition.Client /path/to/the/directory/rddlsim/ReachTheGoodTarget/input localhost ppudd rddl.policy.POPPUDD2policy 2323 42 RTGT_inst_pomdp
+cd /path/to/the/directory/ppudd
+export LD_LIBRARY_PATH=/path/to/the/directory/ppudd/prism-4.0.3-src/lib/:$LD_LIBRARY_PATH
+java -Xmx3g -Djava.library.path=/path/to/the/directory/ppudd/prism-4.0.3-src/lib/ -cp '/path/to/the/directory/ppudd/bin:/path/to/the/directory/ppudd/lib/*' rddl.competition.Client /path/to/the/directory/ppudd/ReachTheGoodTarget/input localhost ppudd rddl.policy.POPPUDD2policy 2323 42 RTGT_inst_pomdp
 ```
 
 ## Installation
@@ -37,15 +37,15 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/l
 ### above all:
 where you want to save the project:
 ```
-git clone https://github.com/drougui/rddlsim.git
+https://github.com/drougui/ppudd.git
 ```
 
-### INSTALL RDDLSim:
+### INSTALL PPUDD and parts from RDDLSim:
 - open this java project with eclipse;
 
 - build path configuration: 
 	right click on the project -> "Build path" -> "Configure Build Path..." -> "Libraries" tab
-	-> "Add External JARs" -> Select all .jar files which are in rddlsim/lib;
+	-> "Add External JARs" -> Select all .jar files which are in ppudd/lib;
 
 - if needed (for some "import"s in solvers java files): 
 	right click on the project -> "Build path" -> "Configure Build Path..." -> "Libraries" tab
@@ -56,7 +56,7 @@ git clone https://github.com/drougui/rddlsim.git
 ### INSTALL the CUDD library from the PRISM project (for ADDs):
 
 ```
-cd /path/to/the/directory/rddlsim/prism-4.0.3-src
+cd /path/to/the/directory/ppudd/prism-4.0.3-src
 nano Makefile
 ```
 
@@ -72,7 +72,7 @@ make
 - In Eclipse: go to the jdd directory in /src;
 	right click on JDDTest.java -> Run as -> Run Configurations... -> Environment tab -> New... 
 	- Name: LD_LIBRARY_PATH 
-	- Value: /path/to/the/directory/rddlsim/prism-4.0.3-src/lib/
+	- Value: /path/to/the/directory/ppudd/prism-4.0.3-src/lib/
 
 and then run JDDTest.
 
@@ -85,7 +85,7 @@ The file parameters.txt stores some parameters which may be modified.
 - DM, CM: parameters of the observation function.
 
 ```
-cd /path/to/the/directory/rddlsim/ReachTheGoodTarget
+cd /path/to/the/directory/ppudd/ReachTheGoodTarget
 make
 ./generateRTGT
 ```
@@ -95,12 +95,12 @@ into a spudd-sperseus one, use the following line:
 
 ```
 cd ..
-java -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/rddlsim/lib/*' rddl.translate.RDDL2Format ReachTheGoodTarget/input spudd_sperseus spudd_sperseus
+java -cp '/path/to/the/directory/ppudd/bin:/path/to/the/directory/ppudd/lib/*' rddl.translate.RDDL2Format ReachTheGoodTarget/input spudd_sperseus spudd_sperseus
 ```
 
 Finally:
-- the rddlsim/ReachTheGoodTarget/input directory contains the generated .rddl file describing the POMDP problem;
-- the rddlsim/spudd_sperseus directory contains the translated .spudd_sperseus file describing it with trees (lisp-like format).
+- the ppudd/ReachTheGoodTarget/input directory contains the generated .rddl file describing the POMDP problem;
+- the ppudd/spudd_sperseus directory contains the translated .spudd_sperseus file describing it with trees (lisp-like format).
 
 ## Reference
 
