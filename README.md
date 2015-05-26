@@ -21,13 +21,15 @@ from the prism project.
 
 First terminal
 ```
-  ./run rddl.competition.Server rddl/
+cd /path/to/the/directory/rddlsim
+./run rddl.competition.Server ReachTheGoodTarget/input/
 ```
 
 Second terminal
 ```
+cd /path/to/the/directory/rddlsim
 export LD_LIBRARY_PATH=/path/to/the/directory/rddlsim/prism-4.0.3-src/lib/:$LD_LIBRARY_PATH
-java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/lib/ -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/rddlsim/lib/*' rddl.competition.Client /path/to/the/directory/rddlsim/ReachTheGoodTarget/input localhost ppudd rddl.policy.POPPUDD2policy 2323 42 RTGT_inst_pomdp.sperseus
+java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/lib/ -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/rddlsim/lib/*' rddl.competition.Client /path/to/the/directory/rddlsim/ReachTheGoodTarget/input localhost ppudd rddl.policy.POPPUDD2policy 2323 42 RTGT_inst_pomdp
 ```
 
 ## Installation
@@ -48,7 +50,7 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/l
 ### INSTALL the CUDD library from the PRISM project (for ADDs):
 
 ```
-cd rddlsim/prism-4.0.3-src
+cd /path/to/the/directory/rddlsim/prism-4.0.3-src
 nano Makefile
 ```
 
@@ -75,7 +77,7 @@ The file parameters.txt stores some parameters which may be modified.
 - DM, CM: parameters of the observation function.
 
 ```
-cd ReachTheGoodTarget
+cd cd /path/to/the/directory/rddlsim/ReachTheGoodTarget
 make
 ./generateRTGT
 ```
@@ -84,12 +86,13 @@ To translate the returned rddl file RTGT_pomdp.rddl
 into a spudd-sperseus one, use the following line:
 
 ```
-java -Xmx3g -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/lib/*' rddl.translate.RDDL2Format input output spudd_sperseus
+cd ..
+java -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/rddlsim/lib/*' rddl.translate.RDDL2Format ReachTheGoodTarget/input spudd_sperseus spudd_sperseus
 ```
 
 Finally:
-- the input directory contains the generated .rddl file describing the POMDP problem;
-- the output directory contains the translated .spudd_sperseus file describing it with trees (lisp-like format).
+- the rddlsim/ReachTheGoodTarget/input directory contains the generated .rddl file describing the POMDP problem;
+- the rddlsim/spudd_sperseus directory contains the translated .spudd_sperseus file describing it with trees (lisp-like format).
 
 ## Reference
 
