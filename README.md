@@ -68,11 +68,11 @@ and then run JDDTest.
 https://code.google.com/p/rddlsim/
 Copyright (C) 2010, Scott Sanner (ssanner@gmail.com) and Sungwook Yoon (sungwook.yoon@gmail.com)
 
--PRISM: http://www.prismmodelchecker.org/
+- PRISM: http://www.prismmodelchecker.org/
 
--CUDD: http://vlsi.colorado.edu/~fabio/CUDD/
+- CUDD: http://vlsi.colorado.edu/~fabio/CUDD/
 
--IPPC-2014: https://cs.uwaterloo.ca/~mgrzes/IPPC_2014/
+- IPPC-2014: https://cs.uwaterloo.ca/~mgrzes/IPPC_2014/
 
 ## License
 

@@ -1,0 +1,527 @@
+// Automatically produced by rddl.translate.RDDL2Format
+// SPUDD / Symbolic Perseus Format for 'reachTheGoodTarget_pomdp.reachTheGoodTarget_inst_pomdp__1'
+
+(variables 
+	(targetOneIsA true false)
+	(robot_loc_boolean_1 true false)
+	(robot_loc_boolean_2 true false)
+)
+
+(observations 
+	(obs_target_one true false)
+	(obs_target_two true false)
+	(robot_loc_obs_1 true false)
+	(robot_loc_obs_2 true false)
+)
+
+init [*
+	(targetOneIsA (true (1.0)) (false (0.0)))
+	(robot_loc_boolean_1 (true (1.0)) (false (0.0)))
+	(robot_loc_boolean_2 (true (1.0)) (false (0.0)))
+]
+
+action move_east
+	targetOneIsA
+		(targetOneIsA 
+			(true (targetOneIsA' 
+				(true (1.0))
+				(false (0.0))))
+			(false (targetOneIsA' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_1
+		(robot_loc_boolean_1 
+			(true (robot_loc_boolean_1' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_2 
+				(true (robot_loc_boolean_1' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_boolean_1' 
+					(true (0.0))
+					(false (1.0)))))))
+	robot_loc_boolean_2
+		(robot_loc_boolean_2 
+			(true (robot_loc_boolean_2' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_2' 
+				(true (0.0))
+				(false (1.0)))))
+	observe 
+		obs_target_one
+			(targetOneIsA 
+				(true (obs_target_one' 
+					(true (0.66))
+					(false (0.33999999999999997))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_one' 
+						(true (0.66))
+						(false (0.33999999999999997))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_one' 
+							(true (0.66))
+							(false (0.33999999999999997))))
+						(false (obs_target_one' 
+							(true (0.3))
+							(false (0.7)))))))))
+		obs_target_two
+			(targetOneIsA 
+				(true (obs_target_two' 
+					(true (0.2))
+					(false (0.8))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_two' 
+						(true (0.2))
+						(false (0.8))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_two' 
+							(true (0.2))
+							(false (0.8))))
+						(false (obs_target_two' 
+							(true (0.9))
+							(false (0.09999999999999998)))))))))
+		robot_loc_obs_1
+			(robot_loc_boolean_1 
+				(true (robot_loc_obs_1' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_1' 
+					(true (0.0))
+					(false (1.0)))))
+		robot_loc_obs_2
+			(robot_loc_boolean_2 
+				(true (robot_loc_obs_2' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_2' 
+					(true (0.0))
+					(false (1.0)))))
+	endobserve
+endaction
+
+action move_north
+	targetOneIsA
+		(targetOneIsA 
+			(true (targetOneIsA' 
+				(true (1.0))
+				(false (0.0))))
+			(false (targetOneIsA' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_1
+		(robot_loc_boolean_1 
+			(true (robot_loc_boolean_1' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_1' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_2
+		(robot_loc_boolean_2 
+			(true (robot_loc_boolean_2' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_2' 
+				(true (0.0))
+				(false (1.0)))))
+	observe 
+		obs_target_one
+			(targetOneIsA 
+				(true (obs_target_one' 
+					(true (0.66))
+					(false (0.33999999999999997))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_one' 
+						(true (0.66))
+						(false (0.33999999999999997))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_one' 
+							(true (0.66))
+							(false (0.33999999999999997))))
+						(false (obs_target_one' 
+							(true (0.3))
+							(false (0.7)))))))))
+		obs_target_two
+			(targetOneIsA 
+				(true (obs_target_two' 
+					(true (0.2))
+					(false (0.8))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_two' 
+						(true (0.2))
+						(false (0.8))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_two' 
+							(true (0.2))
+							(false (0.8))))
+						(false (obs_target_two' 
+							(true (0.9))
+							(false (0.09999999999999998)))))))))
+		robot_loc_obs_1
+			(robot_loc_boolean_1 
+				(true (robot_loc_obs_1' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_1' 
+					(true (0.0))
+					(false (1.0)))))
+		robot_loc_obs_2
+			(robot_loc_boolean_2 
+				(true (robot_loc_obs_2' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_2' 
+					(true (0.0))
+					(false (1.0)))))
+	endobserve
+endaction
+
+action move_south
+	targetOneIsA
+		(targetOneIsA 
+			(true (targetOneIsA' 
+				(true (1.0))
+				(false (0.0))))
+			(false (targetOneIsA' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_1
+		(robot_loc_boolean_1 
+			(true (robot_loc_boolean_2 
+				(true (robot_loc_boolean_1' 
+					(true (0.0))
+					(false (1.0))))
+				(false (robot_loc_boolean_1' 
+					(true (1.0))
+					(false (0.0))))))
+			(false (robot_loc_boolean_1' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_2
+		(robot_loc_boolean_2 
+			(true (robot_loc_boolean_2' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_2' 
+				(true (0.0))
+				(false (1.0)))))
+	observe 
+		obs_target_one
+			(targetOneIsA 
+				(true (obs_target_one' 
+					(true (0.66))
+					(false (0.33999999999999997))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_one' 
+						(true (0.66))
+						(false (0.33999999999999997))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_one' 
+							(true (0.66))
+							(false (0.33999999999999997))))
+						(false (obs_target_one' 
+							(true (0.3))
+							(false (0.7)))))))))
+		obs_target_two
+			(targetOneIsA 
+				(true (obs_target_two' 
+					(true (0.2))
+					(false (0.8))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_two' 
+						(true (0.2))
+						(false (0.8))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_two' 
+							(true (0.2))
+							(false (0.8))))
+						(false (obs_target_two' 
+							(true (0.9))
+							(false (0.09999999999999998)))))))))
+		robot_loc_obs_1
+			(robot_loc_boolean_1 
+				(true (robot_loc_obs_1' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_1' 
+					(true (0.0))
+					(false (1.0)))))
+		robot_loc_obs_2
+			(robot_loc_boolean_2 
+				(true (robot_loc_obs_2' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_2' 
+					(true (0.0))
+					(false (1.0)))))
+	endobserve
+endaction
+
+action move_west
+	targetOneIsA
+		(targetOneIsA 
+			(true (targetOneIsA' 
+				(true (1.0))
+				(false (0.0))))
+			(false (targetOneIsA' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_1
+		(robot_loc_boolean_1 
+			(true (robot_loc_boolean_1' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_1' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_2
+		(robot_loc_boolean_2 
+			(true (robot_loc_boolean_2' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_2' 
+				(true (0.0))
+				(false (1.0)))))
+	observe 
+		obs_target_one
+			(targetOneIsA 
+				(true (obs_target_one' 
+					(true (0.66))
+					(false (0.33999999999999997))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_one' 
+						(true (0.66))
+						(false (0.33999999999999997))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_one' 
+							(true (0.66))
+							(false (0.33999999999999997))))
+						(false (obs_target_one' 
+							(true (0.3))
+							(false (0.7)))))))))
+		obs_target_two
+			(targetOneIsA 
+				(true (obs_target_two' 
+					(true (0.2))
+					(false (0.8))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_two' 
+						(true (0.2))
+						(false (0.8))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_two' 
+							(true (0.2))
+							(false (0.8))))
+						(false (obs_target_two' 
+							(true (0.9))
+							(false (0.09999999999999998)))))))))
+		robot_loc_obs_1
+			(robot_loc_boolean_1 
+				(true (robot_loc_obs_1' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_1' 
+					(true (0.0))
+					(false (1.0)))))
+		robot_loc_obs_2
+			(robot_loc_boolean_2 
+				(true (robot_loc_obs_2' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_2' 
+					(true (0.0))
+					(false (1.0)))))
+	endobserve
+endaction
+
+action noop
+	targetOneIsA
+		(targetOneIsA 
+			(true (targetOneIsA' 
+				(true (1.0))
+				(false (0.0))))
+			(false (targetOneIsA' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_1
+		(robot_loc_boolean_1 
+			(true (robot_loc_boolean_1' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_1' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_2
+		(robot_loc_boolean_2 
+			(true (robot_loc_boolean_2' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_2' 
+				(true (0.0))
+				(false (1.0)))))
+	observe 
+		obs_target_one
+			(targetOneIsA 
+				(true (obs_target_one' 
+					(true (0.66))
+					(false (0.33999999999999997))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_one' 
+						(true (0.66))
+						(false (0.33999999999999997))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_one' 
+							(true (0.66))
+							(false (0.33999999999999997))))
+						(false (obs_target_one' 
+							(true (0.3))
+							(false (0.7)))))))))
+		obs_target_two
+			(targetOneIsA 
+				(true (obs_target_two' 
+					(true (0.2))
+					(false (0.8))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_two' 
+						(true (0.2))
+						(false (0.8))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_two' 
+							(true (0.2))
+							(false (0.8))))
+						(false (obs_target_two' 
+							(true (0.9))
+							(false (0.09999999999999998)))))))))
+		robot_loc_obs_1
+			(robot_loc_boolean_1 
+				(true (robot_loc_obs_1' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_1' 
+					(true (0.0))
+					(false (1.0)))))
+		robot_loc_obs_2
+			(robot_loc_boolean_2 
+				(true (robot_loc_obs_2' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_2' 
+					(true (0.0))
+					(false (1.0)))))
+	endobserve
+endaction
+
+action stay
+	targetOneIsA
+		(targetOneIsA 
+			(true (targetOneIsA' 
+				(true (1.0))
+				(false (0.0))))
+			(false (targetOneIsA' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_1
+		(robot_loc_boolean_1 
+			(true (robot_loc_boolean_1' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_1' 
+				(true (0.0))
+				(false (1.0)))))
+	robot_loc_boolean_2
+		(robot_loc_boolean_2 
+			(true (robot_loc_boolean_2' 
+				(true (1.0))
+				(false (0.0))))
+			(false (robot_loc_boolean_2' 
+				(true (0.0))
+				(false (1.0)))))
+	observe 
+		obs_target_one
+			(targetOneIsA 
+				(true (obs_target_one' 
+					(true (0.66))
+					(false (0.33999999999999997))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_one' 
+						(true (0.66))
+						(false (0.33999999999999997))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_one' 
+							(true (0.66))
+							(false (0.33999999999999997))))
+						(false (obs_target_one' 
+							(true (0.3))
+							(false (0.7)))))))))
+		obs_target_two
+			(targetOneIsA 
+				(true (obs_target_two' 
+					(true (0.2))
+					(false (0.8))))
+				(false (robot_loc_boolean_1 
+					(true (obs_target_two' 
+						(true (0.2))
+						(false (0.8))))
+					(false (robot_loc_boolean_2 
+						(true (obs_target_two' 
+							(true (0.2))
+							(false (0.8))))
+						(false (obs_target_two' 
+							(true (0.9))
+							(false (0.09999999999999998)))))))))
+		robot_loc_obs_1
+			(robot_loc_boolean_1 
+				(true (robot_loc_obs_1' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_1' 
+					(true (0.0))
+					(false (1.0)))))
+		robot_loc_obs_2
+			(robot_loc_boolean_2 
+				(true (robot_loc_obs_2' 
+					(true (1.0))
+					(false (0.0))))
+				(false (robot_loc_obs_2' 
+					(true (0.0))
+					(false (1.0)))))
+	endobserve
+	cost [+ 
+		(targetOneIsA 
+			(true (robot_loc_boolean_1 
+				(true (robot_loc_boolean_2 
+					(true (-100.0))
+					(false (0.0))))
+				(false (0.0))))
+			(false (0.0)))
+		(targetOneIsA 
+			(true (0.0))
+			(false (robot_loc_boolean_1 
+				(true (robot_loc_boolean_2 
+					(true (100.0))
+					(false (0.0))))
+				(false (0.0)))))
+		(targetOneIsA 
+			(true (robot_loc_boolean_1 
+				(true (0.0))
+				(false (robot_loc_boolean_2 
+					(true (0.0))
+					(false (100.0))))))
+			(false (0.0)))
+		(targetOneIsA 
+			(true (0.0))
+			(false (robot_loc_boolean_1 
+				(true (0.0))
+				(false (robot_loc_boolean_2 
+					(true (0.0))
+					(false (-100.0)))))))
+	]
+endaction
+
+reward
+	(0.0)
+
+discount 1.0
+horizon 40

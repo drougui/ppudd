@@ -1,0 +1,173 @@
+////////////////////////////////////////////////////////////////////
+//
+// "reach the good target" POMDP
+//
+// Author: Nicolas Drougard (nicolas.drougard [at] onera.fr)
+//
+// In a grid, a robot (R) has to reach a target (A).
+// Successive locations of (R) are fully observable.
+// Two targets, T1 and T2 are in this grid, 
+// and their locations are known.
+// One target is (A), and the other is (B).
+// However, the targets nature, (A) or (B), are unknown, 
+// and the aim is to reach target (A).
+// At each process step, the robot analyzes pictures of each target 
+// which produces a guess for targets’ natures: 
+// the two targets can be observed as (A), which corresponds to the observation (oAA) 
+// or only T1 (oAB), or only T2 (oBA) or no target (oBB).
+//
+// as an ignorant prior, the initial belief b_0 is: p(T1=A) = p(T2=A) = 0.5
+//
+// * * * * * * * * * * * *
+// * T1              	 * 
+// *			 *
+// *			 * 
+// *			 *
+// *			 *
+// *			 *
+// *			 *
+// * R                T2 * 
+// * * * * * * * * * * * *
+//
+////////////////////////////////////////////////////////////////////
+
+
+
+// TODO : generer avec prog C++:
+// - inst_actual.rddl (and inst_assumed.rddl) pour le server 
+// - generer avec prog C++ (actual.spudd) and assumed.spudd 
+// pour mon solver [ou bien traduc from RDDLsim? non car pas MO!!!]
+// - idem .pomdpx pour APPL (direct [déja fait] ou traduc fournie)
+
+// mon code c++ initial --> creer rddl et spudd avec les données générée (et pas à la manière de RDDL une var pour une instance)
+
+// TODO: en tout cas, il faut arreter ce délire d'une variable par état....
+// reformuler pour avoir log_2(#S_v) variables de position
+// et une variable cachée
+// et deux observations
+// il faut que les noms correspondent à ceux d'APPL
+// tester la traduc en sperseus de ce RDDL "intelligent"
+// sinon générer (aussi... ça sera proche du rddl) le sperseus de ce RDDL
+
+// utiliser le translator APPL (ou code c++ initial?)
+// tester POPPUDD et APPL dessus
+// !!! ATTENTION! gérer les beliefs init non déterministes, au moins pour notre parser ? VRAI CA?
+
+// TRANSLATION:
+// java -Xmx3g -Djava.library.path=/home/drougard/workspace/prism-4.0.3-src/lib/ -cp '/home/drougard/RDDLSim/rddl-ppudd/bin:/home/drougard/RDDLSim/rddl-ppudd/lib/*' rddl.translate.RDDL2Format input output spudd_sperseus
+//
+
+domain reachTheGoodTarget_pomdp {
+	requirements = {
+		reward-deterministic,
+//		constrained-state,
+		partially-observed
+	};
+	
+	pvariables {
+
+		robot-loc-boolean-1 : {state-fluent, bool, default = false};
+		robot-loc-boolean-2 : {state-fluent, bool, default = false};
+		targetOneIsA : {state-fluent, bool, default = false};
+		
+		// Observations
+		obs-target-one : {observ-fluent, bool};
+		obs-target-two : {observ-fluent, bool};
+		robot-loc-obs-1 : {observ-fluent, bool};
+		robot-loc-obs-2 : {observ-fluent, bool};
+		
+		// Actions
+		move-north : {action-fluent, bool, default = false};
+		move-south : {action-fluent, bool, default = false};
+		move-east  : {action-fluent, bool, default = false};
+		move-west  : {action-fluent, bool, default = false};
+		stay : {action-fluent, bool, default = false};		
+// noop <- obs "rien"
+	};
+	
+	cpfs {
+		obs-target-one = if ( robot-loc-boolean-1 | robot-loc-boolean-2 | targetOneIsA )
+			then
+			Bernoulli( 0.66 )
+			else if ( (~robot-loc-boolean-1) | robot-loc-boolean-2 | targetOneIsA )
+			then			
+			Bernoulli( 0.3 )
+			else if ( robot-loc-boolean-1 | (~robot-loc-boolean-2) | targetOneIsA )
+			then			
+			Bernoulli( 0.8 )
+			else if ( (~robot-loc-boolean-1) | (~robot-loc-boolean-2) | targetOneIsA )
+			then			
+			Bernoulli( 0.11 )
+			else if ( robot-loc-boolean-1 | robot-loc-boolean-2 | (~targetOneIsA) )
+			then
+			Bernoulli( 0.66 )
+			else if ( (~robot-loc-boolean-1) | robot-loc-boolean-2 | (~targetOneIsA) )
+			then			
+			Bernoulli( 0.3 )
+			else if ( robot-loc-boolean-1 | (~robot-loc-boolean-2) | (~targetOneIsA) )
+			then
+			Bernoulli( 0.8 )
+			else 
+			Bernoulli( 0.2);
+		obs-target-two = if ( robot-loc-boolean-1 | robot-loc-boolean-2 | targetOneIsA )
+			then
+			Bernoulli( 0.2 )
+			else if ( (~robot-loc-boolean-1) | robot-loc-boolean-2 | targetOneIsA )
+			then	
+			Bernoulli( 0.9 )
+			else if ( robot-loc-boolean-1 | (~robot-loc-boolean-2) | targetOneIsA )
+			then			
+			Bernoulli( 0.1 )
+			else if ( (~robot-loc-boolean-1) | (~robot-loc-boolean-2) | targetOneIsA )
+			then			
+			Bernoulli( 0.21 )
+			else if ( robot-loc-boolean-1 | robot-loc-boolean-2 | (~targetOneIsA) )
+			then
+			Bernoulli( 0.36 )
+			else if ( (~robot-loc-boolean-1) | robot-loc-boolean-2 | (~targetOneIsA) )
+			then
+			Bernoulli( 0.1 )
+			else if ( robot-loc-boolean-1 | (~robot-loc-boolean-2) | (~targetOneIsA) )
+			then			
+			Bernoulli( 0.2 )
+			else 
+			Bernoulli( 0.8);
+
+		robot-loc-obs-1 = KronDelta(robot-loc-boolean-1);
+		robot-loc-obs-2 = KronDelta(robot-loc-boolean-2);
+
+		robot-loc-boolean-1' =
+			if ( move-north ^ robot-loc-boolean-1 ) 
+			then 
+				KronDelta(true)
+			else if ( move-south ^ robot-loc-boolean-2)
+			then 
+				KronDelta(false) 
+			else if ( move-east ^ robot-loc-boolean-2 )
+			then 
+				KronDelta(true)
+			else 
+				KronDelta( robot-loc-boolean-1 );
+
+		robot-loc-boolean-2' = KronDelta( robot-loc-boolean-2 );
+
+		targetOneIsA' = KronDelta(targetOneIsA); 
+	};
+	
+	// 100 reward for reaching target A, -100 for reaching target B, 0 in all other cases
+	reward = [ (targetOneIsA^robot-loc-boolean-1^robot-loc-boolean-2^stay)*100.0 + ((~targetOneIsA)^robot-loc-boolean-1^robot-loc-boolean-2^stay)*(-100.0) + (targetOneIsA^(~robot-loc-boolean-1)^(~robot-loc-boolean-2)^stay)*(-100.0) + ((~targetOneIsA)^(~robot-loc-boolean-1)^(~robot-loc-boolean-2)^stay)*100.0 ]; 
+	
+}
+
+instance reachTheGoodTarget_inst_pomdp__1 {
+	domain = reachTheGoodTarget_pomdp;
+	init-state {
+		robot-loc-boolean-1;
+		robot-loc-boolean-2;
+		targetOneIsA;
+	};
+	max-nondef-actions = 1;
+	horizon = 40;
+	discount = 1.0;
+}
+

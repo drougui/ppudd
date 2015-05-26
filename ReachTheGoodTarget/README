@@ -1,0 +1,13 @@
+This small project is meant to generate the problem described in 
+"Qualitative Possibilistic Mixed-Observable MDPs, UAI-13".
+
+"make" to compile the problem generator,
+and then ./generateRTGT to generate the rddl file.
+
+The file parameters.txt stores some parameters 
+which can be modified.
+
+To translate the returned rddl file RTGT_pomdp.rddl
+into a spudd-sperseus one, use the following line:
+
+java -Xmx3g -Djava.library.path=/home/drougard/workspace/prism-4.0.3-src/lib/ -cp '/home/drougard/RDDLSim/rddl-ppudd/bin:/home/drougard/RDDLSim/rddl-ppudd/lib/*' rddl.translate.RDDL2Format input output spudd_sperseus

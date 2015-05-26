@@ -1,0 +1,13 @@
+grid_size: 10
+walls_number: 6
+discount: 0.99
+DM: 10
+CM: 1
+DR: 10
+CR: 1
+p: 0.6
+R: 4.0
+situation: BL
+nb_testAverage: 10000
+belief_init: 0.5 0.5
+pibelief_init:  28 28
