@@ -64,7 +64,7 @@ make
 and then run JDDTest.
 
 ## RTGT ("reach the good target" benchmark)
-The file parameters.txt stores some parameters may be modified.
+The file parameters.txt stores some parameters which may be modified.
 
 - grid_size: size of a side of the grid;
 - walls_number: number of walls in the grid (random positions stated);
@@ -80,7 +80,7 @@ To translate the returned rddl file RTGT_pomdp.rddl
 into a spudd-sperseus one, use the following line:
 
 ```
-java -Xmx3g -Djava.library.path=/home/drougard/workspace/prism-4.0.3-src/lib/ -cp '/home/drougard/RDDLSim/rddl-ppudd/bin:/home/drougard/RDDLSim/rddl-ppudd/lib/*' rddl.translate.RDDL2Format input output spudd_sperseus
+java -Xmx3g -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/lib/*' rddl.translate.RDDL2Format input output spudd_sperseus
 ```
 ## Reference
 
