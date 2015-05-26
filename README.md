@@ -64,7 +64,7 @@ and then run JDDTest.
 
 ## Reference
 
--RDDLSim -- A simulator for the relational dynamic influence diagram language (RDDL).
+- RDDLSim -- A simulator for the relational dynamic influence diagram language (RDDL).
 https://code.google.com/p/rddlsim/
 Copyright (C) 2010, Scott Sanner (ssanner@gmail.com) and Sungwook Yoon (sungwook.yoon@gmail.com)
 
