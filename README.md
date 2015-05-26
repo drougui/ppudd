@@ -13,7 +13,7 @@ It provides also the experiment proposed in
 "Qualitative Possibilistic Mixed-Observable MDPs" of the same authors,
 and the simulations of the International Probabilistic Planning Competition (IPPC) 2014.
 
-This is presented in the context of the rddlsim project, 
+This is presented in the context of the RDDLSim project, 
 and using a library (for ADDs in C++) from the prism project.
 
 ## Example
@@ -44,7 +44,7 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/l
 	- Resolution: "Accessible" 
 	- Rule Pattern: "com/sun/org/**".
 
-### INSTALL the CUDD library from the prism project to use ADDs:
+### INSTALL the CUDD library from the PRISM project (for ADDs):
 ```
 cd rddlsim/prism-4.0.3-src
 nano Makefile
@@ -68,11 +68,11 @@ and then run JDDTest.
 https://code.google.com/p/rddlsim/
 Copyright (C) 2010, Scott Sanner (ssanner@gmail.com) and Sungwook Yoon (sungwook.yoon@gmail.com)
 
--prism: http://www.prismmodelchecker.org/
+-PRISM: http://www.prismmodelchecker.org/
 
 -CUDD: http://vlsi.colorado.edu/~fabio/CUDD/
 
--IPPC2014: https://cs.uwaterloo.ca/~mgrzes/IPPC_2014/
+-IPPC-2014: https://cs.uwaterloo.ca/~mgrzes/IPPC_2014/
 
 ## License
 
