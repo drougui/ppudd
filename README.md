@@ -6,11 +6,11 @@ Nicolas Drougard (nicolas.drougard@onera.fr)
 ## Synopsis
 
 This project provides the code of the solver of \pi-POMDPs PPUDD 
-described in "Structured Possibilistic Planning Using Decision Diagrams", 
-Nicolas Drougard, Florent Teichteil-Königsbuch, Jean-Loup Farges, Didier Dubois.
+described in "Structured Possibilistic Planning Using Decision Diagrams", AAAI-14, 
+Nicolas Drougard, Florent Teichteil-Königsbuch, Jean-Loup Farges and Didier Dubois.
 
 It provides also the experiment proposed in
-"Qualitative Possibilistic Mixed-Observable MDPs" of the same authors,
+"Qualitative Possibilistic Mixed-Observable MDPs", UAI-13, of the same authors,
 and the simulations of the International Probabilistic Planning Competition (IPPC) 2014.
 
 This is presented in the context of the RDDLSim project, 
@@ -27,7 +27,7 @@ First terminal
 Second terminal
 ```
 export LD_LIBRARY_PATH=/path/to/the/directory/rddlsim/prism-4.0.3-src/lib/:$LD_LIBRARY_PATH
-java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/lib/ -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/rddlsim/lib/*' rddl.competition.Client /path/to/the/directory/rddlsim/input localhost ppudd rddl.policy.POPPUDD2policy 2323 42 RTGT_inst_pomdp.sperseus
+java -Xmx3g -Djava.library.path=/path/to/the/directory/rddlsim/prism-4.0.3-src/lib/ -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/rddlsim/lib/*' rddl.competition.Client /path/to/the/directory/rddlsim/ReachTheGoodTarget/input localhost ppudd rddl.policy.POPPUDD2policy 2323 42 RTGT_inst_pomdp.sperseus
 ```
 
 ## Installation
@@ -86,6 +86,10 @@ into a spudd-sperseus one, use the following line:
 ```
 java -Xmx3g -cp '/path/to/the/directory/rddlsim/bin:/path/to/the/directory/lib/*' rddl.translate.RDDL2Format input output spudd_sperseus
 ```
+
+Finally:
+- the input directory contains the generated .rddl file describing the POMDP problem;
+- the output directory contains the translated .spudd_sperseus file describing it with tree (lisp-like format).
 
 ## Reference
 
