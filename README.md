@@ -45,13 +45,12 @@ INSTALL rddlsim:
 	- Rule Pattern: "com/sun/org/**".
 
 INSTALL the CUDD library from the prism project to use ADDs:
-- in the Makefile:
 ```
 cd rddlsim/prism-4.0.3-src
 nano Makefile
 ```
-	- set the java directory, for instance, for me : JAVA_DIR = /usr/lib/jvm/java-7-openjdk-amd64
-	- and then 
+- set the java directory, for instance, for me : JAVA_DIR = /usr/lib/jvm/java-7-openjdk-amd64;
+- and then:
 ```
 make
 ```
