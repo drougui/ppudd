@@ -46,20 +46,17 @@ INSTALL rddlsim:
 
 INSTALL the CUDD library from the prism project to use ADDs:
 - in the Makefile:
-
 ```
 cd rddlsim/prism-4.0.3-src
 nano Makefile
 ```
 	- set the java directory, for instance, for me : JAVA_DIR = /usr/lib/jvm/java-7-openjdk-amd64
-
 	- and then 
 ```
 make
 ```
 
-- In Eclipse:
-	- go to the jdd directory in /src:
+- In Eclipse: go to the jdd directory in /src;
 	right click on JDDTest.java -> Run as -> Run Configurations... -> Environment tab -> New... 
 	- Name: LD_LIBRARY_PATH 
 	- Value: /path/to/the/directory/prism-4.0.3-src/lib/
