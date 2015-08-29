@@ -13,9 +13,9 @@ It provides also the experiment proposed in
 "Qualitative Possibilistic Mixed-Observable MDPs", UAI-13, of the same authors,
 and the simulations of the International Probabilistic Planning Competition (IPPC) 2014.
 
-This is presented in the context of the RDDLSim project, 
-and using the CUDD library (for the use of ADDs in C++) 
-from the prism project.
+This is presented in the context of the RDDLSim project,
+in order to propose strategy computations and simulations like in IPPC competitons: 
+it uses CUDD library (for the use of ADDs in C++) from the prism project.
 
 ## Example
 
@@ -34,13 +34,13 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/ppudd/prism-4.0.3-src/lib
 
 ## Installation
 
-### above all:
+### first of all:
 where you want to save the project:
 ```
 git clone https://github.com/drougui/ppudd.git
 ```
 
-### INSTALL PPUDD and parts from RDDLSim:
+### INSTALL PPUDD and needed parts from RDDLSim:
 - open this java project with eclipse;
 
 - build path configuration: 
