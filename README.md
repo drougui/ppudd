@@ -37,7 +37,7 @@ java -Xmx3g -Djava.library.path=/path/to/the/directory/ppudd/prism-4.0.3-src/lib
 ### above all:
 where you want to save the project:
 ```
-https://github.com/drougui/ppudd.git
+git clone https://github.com/drougui/ppudd.git
 ```
 
 ### INSTALL PPUDD and parts from RDDLSim:
